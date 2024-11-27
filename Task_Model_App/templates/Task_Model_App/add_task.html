@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %} 
+    Add Task Page
+{% endblock title %}
+
+{% block content %}
+
+    <form method='post' style="width: 50%; margin: auto;">
+        <h4 style="margin: 20px 0px">Add a new task.</h4>
+        {% csrf_token %}
+        {{ task_form | crispy }}
+        <button class="btn btn-primary mb-5">Add Task</button>
+    </form>
+
+{% endblock content %}
